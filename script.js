@@ -44,7 +44,7 @@ function calcIskGeneral () {
 	  	  }
 	  }
 
-	  return paymentSum;
+	  return Math.round(paymentSum);
 }
 
 function calcIskGeneralOrder () {
@@ -93,7 +93,7 @@ function calcIskGeneralOrder () {
 	  	  }
 	  }
 
-	  return paymentSum / 2;
+	  return Math.round(paymentSum / 2);
 }
 
 
@@ -143,7 +143,7 @@ function calcIskArbitr () {
 	  	  }
 	  }
 
-	  return paymentSum;
+	  return Math.round(paymentSum);
 }
 
 function calcIskArbitrOrder () {
@@ -192,7 +192,7 @@ function calcIskArbitrOrder () {
 	  	  }
 	  }
 
-	  return paymentSum / 2;
+	  return Math.round(paymentSum / 2);
 }
 
 
@@ -226,7 +226,7 @@ function showHideIfCompanyGeneralChecked() {
 }
 
 function showHideIfPersonArbitrChecked() {	
-		
+
 		$('#salary').parent().hide();
 		$('#divorce-appeal').parent().hide();
 		$('#adoption').parent().hide();

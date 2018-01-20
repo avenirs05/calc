@@ -155,6 +155,16 @@
 					<span>&nbsp;&nbsp;Подача заявления об обеспечении иска</span>
 				</label>
 
+				<label>
+					<input id="supervision" type="radio" name="request">
+					<span>&nbsp;&nbsp;Подача надзорной жалобы</span>
+				</label>
+
+				<label>
+					<input id="appeal" type="radio" name="request">
+					<span>&nbsp;&nbsp;Подача апелляционной жалобы и (или) кассационной жалобы</span>
+				</label>
+
 			</div>
 
 			
