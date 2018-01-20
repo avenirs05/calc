@@ -45,6 +45,10 @@
 	color: #0013E5;
 }
 
+#claim-asset-sum {
+	width: 100px;
+}
+
 
 @media screen and (max-device-width: 991px) {
 

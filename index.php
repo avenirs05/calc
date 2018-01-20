@@ -31,7 +31,7 @@
 			<div class="claimant-wrap">
 				<h5><b>Истец:</b></h5>
 				<label>
-					<input id="person" type="radio" name="claimant">
+					<input id="person" type="radio" name="claimant" checked>
 					<span>&nbsp;&nbsp;Физическое лицо</span>
 				</label>
 				<label>
@@ -43,7 +43,7 @@
 			<div class="court-wrap">
 				<h5><b>Обращение в:</b></h5>
 				<label>
-					<input id="general" type="radio" name="court">
+					<input id="general" type="radio" name="court" checked>
 					<span>&nbsp;&nbsp;Суд общей юрисдикции</span>
 				</label>
 				<label>
@@ -53,11 +53,20 @@
 			</div>
 
 			<div class="payment-sum-wrap">
-				<h5><b>Сумма госпошлины:</b> <span id="sum-text">3 000 руб.</span></h5>
+				<h5><b>Сумма госпошлины:</b> <span id="sum-text">0</span> руб.</h5>
 			</div>
 
 			<div class="request-type-wrap">
 				<h5><b>Тип заявления:</b></h5>
+
+				<label>
+					<input id="claim-asset" type="radio" name="request">
+					<span>&nbsp;&nbsp;Исковое обращение имущественного характера</span>.						
+					<span id="span-sum-entry" style="display: none;">
+						<span id="label-sum-entry"><i>Введите сумму иска:</i></span>
+						<input id="claim-asset-sum" type="text" name="request">&nbsp;руб.
+					</span>					
+				</label>
 				
 				<label>
 					<input id="salary" type="radio" name="request">
@@ -97,19 +106,8 @@
 				<label>
 					<input id="dispute-not-asset" type="radio" name="request">
 					<span>&nbsp;&nbsp;Спор неимущественного характера</span>
-				</label>
-				
-				<label>
-					<input id="claim-asset" type="radio" name="request">
-					<span>&nbsp;&nbsp;Исковое обращение имущественного характера</span>
-						
-						<span id="span-sum-entry" style="display: none;">
-							<span id="label-sum-entry"><i>Введите сумму иска:</i></span>
-							<input id="claim-asset-sum" type="text" name="request">&nbsp;руб.
-						</span>
-					
-				</label>
-				
+				</label>	
+
 				<label>
 					<input id="claim-not-value-not-asset" type="radio" name="request">
 					<span>&nbsp;&nbsp;Подача искового заявления имущественного характера, не подлежащего оценке, а также искового заявления неимущественного характера</span>
