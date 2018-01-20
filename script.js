@@ -194,3 +194,67 @@ function calcIskArbitrOrder () {
 
 	  return paymentSum / 2;
 }
+
+
+function showHideIfPersonGeneralChecked() {	
+		$('#salary').parent().show();
+		$('#divorce-appeal').parent().show();
+		$('#documents').parent().show();
+		$('#crime').parent().show();
+		$('#adoption').parent().show();
+		$('#invalid').parent().show();
+		$('#consumer').parent().show();
+		$('#claim-divorce').parent().show();
+		$('#alimony').parent().show();
+
+		$('#bankruptcy').parent().hide();
+		$('#secure-claim').parent().hide();
+}
+
+
+function showHideIfCompanyGeneralChecked() {	
+		$('#salary').parent().hide();
+		$('#divorce-appeal').parent().hide();
+		$('#adoption').parent().hide();
+		$('#invalid').parent().hide();
+		$('#consumer').parent().hide();
+		$('#claim-divorce').parent().hide();
+		$('#alimony').parent().hide();
+
+		$('#bankruptcy').parent().hide();
+		$('#secure-claim').parent().hide();
+}
+
+function showHideIfPersonArbitrChecked() {	
+		
+		$('#salary').parent().hide();
+		$('#divorce-appeal').parent().hide();
+		$('#adoption').parent().hide();
+		$('#invalid').parent().hide();
+		$('#consumer').parent().hide();
+		$('#claim-divorce').parent().hide();
+		$('#alimony').parent().hide();
+
+		$('#documents').parent().hide();
+		$('#crime').parent().hide();
+		$('#bankruptcy').parent().show();
+		$('#secure-claim').parent().show();
+}
+
+function showHideIfCompanyArbitrChecked() {	
+		$('#salary').parent().hide();
+		$('#divorce-appeal').parent().hide();
+		$('#adoption').parent().hide();
+		$('#invalid').parent().hide();
+		$('#consumer').parent().hide();
+		$('#claim-divorce').parent().hide();
+		$('#alimony').parent().hide();
+		$('#documents').parent().hide();
+		$('#crime').parent().hide();
+
+		$('#bankruptcy').parent().show();
+		$('#secure-claim').parent().show();
+}
+
+
+

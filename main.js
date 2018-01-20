@@ -1,12 +1,28 @@
 $(function () {    
 
 	$(document).on('change', function() {
+		if ( $('#person').prop('checked') && $('#general').prop('checked') ) {
+				showHideIfPersonGeneralChecked();
+		}	
+
+		if ( $('#company').prop('checked') && $('#general').prop('checked') ) {
+				showHideIfCompanyGeneralChecked();
+		}		
+
+		if ( $('#person').prop('checked') && $('#arbitr').prop('checked') ) {
+				showHideIfPersonArbitrChecked();
+		}
+
+		if ( $('#company').prop('checked') && $('#arbitr').prop('checked') ) {
+				showHideIfCompanyArbitrChecked();
+		}
+
+
 		$('input:radio').each(function(indx, el) {
 				if ( $(el).prop('checked') && $(el).attr('id') === 'claim-asset') {
 							$('#span-sum-entry').show();
 						  $('#claim-asset-sum').focus();
 				}
-
 				if ( $(el).prop('checked') && $(el).attr('id') !== 'claim-asset') {
 							$('#span-sum-entry').hide();
 				}
@@ -14,8 +30,7 @@ $(function () {
 				if ( $(el).prop('checked') && $(el).attr('id') === 'claim-asset-order') {
 							$('#span-sum-entry-order').show();					
 							$('#claim-asset-sum-order').focus();
-				}
-				
+				}				
 				if ( $(el).prop('checked') && $(el).attr('id') !== 'claim-asset-order') {
 							$('#span-sum-entry-order').hide();
 				}		  			
@@ -24,6 +39,14 @@ $(function () {
 		if ( $('#general').prop('checked') ) {
 					if ( $('#salary, #crime, #documents, #divorce-appeal, #adoption, #invalid, #consumer').prop('checked') ) {
 								$('#sum-text').text( '0' );
+					}
+					if ( $('#dispute-not-asset').prop('checked')) {
+								if ( $('#person').prop('checked') ) {
+											$('#sum-text').text('300');
+								}
+								if ( $('#company').prop('checked') ) {
+											$('#sum-text').text('6000');
+								}
 					}
 					if ( $('#claim-asset').prop('checked') ) {						
 									 $('#sum-text').text( calcIskGeneral() );							
@@ -37,13 +60,18 @@ $(function () {
 					if ( $('#salary').prop('checked') ) {
 								$('#sum-text').text( '0' );
 					}
+					if ( $('#dispute-not-asset').prop('checked')) {
+									$('#sum-text').text('6000');
+					}
 					if ( $('#claim-asset').prop('checked') ) {						
 								 $('#sum-text').text( calcIskArbitr() );							
 					}
 					if ( $('#claim-asset-order').prop('checked') ) {		
 									 $('#sum-text').text( calcIskArbitrOrder() );	
 					}		
-		}		
+		}
+
+
 					
 	});
 
