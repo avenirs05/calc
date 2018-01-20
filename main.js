@@ -4,21 +4,17 @@ $(function () {
 		// Убираем/ставим нужные виды пошлин в зависимости от условий (физ_лицо, юрлицо, арб суд и т.д.)
 		if ( $('#person').prop('checked') && $('#general').prop('checked') ) {
 				showHideIfPersonGeneralChecked();
-		}	
-
+		}
 		if ( $('#company').prop('checked') && $('#general').prop('checked') ) {
 				showHideIfCompanyGeneralChecked();
-		}		
-
+		}
 		if ( $('#person').prop('checked') && $('#arbitr').prop('checked') ) {
 				showHideIfPersonArbitrChecked();
 		}
-
 		if ( $('#company').prop('checked') && $('#arbitr').prop('checked') ) {
 				showHideIfCompanyArbitrChecked();
 		}
-
-
+		// появление (исчезновение) полей для ввода сумм - иск и судебный приказ
 		$('input:radio').each(function(indx, el) {
 				if ( $(el).prop('checked') && $(el).attr('id') === 'claim-asset') {
 							$('#span-sum-entry').show();
@@ -27,7 +23,6 @@ $(function () {
 				if ( $(el).prop('checked') && $(el).attr('id') !== 'claim-asset') {
 							$('#span-sum-entry').hide();
 				}
-
 				if ( $(el).prop('checked') && $(el).attr('id') === 'claim-asset-order') {
 							$('#span-sum-entry-order').show();					
 							$('#claim-asset-sum-order').focus();
@@ -36,20 +31,17 @@ $(function () {
 							$('#span-sum-entry-order').hide();
 				}		  			
 		})
-
+		// калькуляция госпошлины - если суд общий
 		if ( $('#general').prop('checked') ) {
 					if ( $('#claim-asset').prop('checked') ) {						
 									 $('#sum-text').text( calcIskGeneral() );							
-					}	
-					
+					}					
 					if ( $('#claim-asset-order').prop('checked') ) {		
 									 $('#sum-text').text( calcIskGeneralOrder() );	
-					}	
-
+					}
 					if ( $('#salary, #crime, #documents, #divorce-appeal, #adoption, #invalid, #consumer').prop('checked') ) {
 								$('#sum-text').text( '0' );
 					}
-
 					if ( $('#dispute-not-asset').prop('checked')) {
 								if ( $('#person').prop('checked') ) {
 											$('#sum-text').text('300');
@@ -58,7 +50,6 @@ $(function () {
 											$('#sum-text').text('6000');
 								}
 					}
-
 					if ( $('#gov-act').prop('checked')) {
 								if ( $('#person').prop('checked') ) {
 											$('#sum-text').text('300');
@@ -67,15 +58,12 @@ $(function () {
 											$('#sum-text').text('4500');
 								}
 					}
-
 					if ( $('#claim-divorce').prop('checked') ) {
 								$('#sum-text').text('150');
 					}
-
 					if ( $('#alimony').prop('checked') ) {
 								$('#sum-text').text('150');
 					}
-
 					if ( $('#supervision').prop('checked') ) {
 								if ( $('#person').prop('checked') ) {
 											$('#sum-text').text('300');
@@ -84,7 +72,6 @@ $(function () {
 											$('#sum-text').text('6000');
 								}
 					}
-
 					if ( $('#appeal').prop('checked') ) {
 								if ( $('#person').prop('checked') ) {
 											$('#sum-text').text('150');
@@ -93,31 +80,24 @@ $(function () {
 											$('#sum-text').text('3000');
 								}
 					}
-
 					if ( $('#law-meaning').prop('checked') ) {
 								$('#sum-text').text('300');
 					}
-
-
 		}
-
+		// калькуляция госпошлины - если суд арбитражный
 		if ( $('#arbitr').prop('checked') ) {
 					if ( $('#claim-asset').prop('checked') ) {						
 								 $('#sum-text').text( calcIskArbitr() );							
-					}
-					
+					}					
 					if ( $('#claim-asset-order').prop('checked') ) {		
 									 $('#sum-text').text( calcIskArbitrOrder() );	
-					}		
-					
+					}					
 					if ( $('#salary').prop('checked') ) {
 								$('#sum-text').text( '0' );
-					}
-					
+					}					
 					if ( $('#dispute-not-asset').prop('checked')) {
 									$('#sum-text').text('6000');
 					}
-
 					if ( $('#gov-act').prop('checked')) {
 								if ( $('#person').prop('checked') ) {
 											$('#sum-text').text('300');
@@ -126,23 +106,18 @@ $(function () {
 											$('#sum-text').text('2000');
 								}
 					}
-
 					if ( $('#supervision').prop('checked') ) {
 								$('#sum-text').text('6000');
 					}
-
 					if ( $('#appeal').prop('checked') ) {
 								$('#sum-text').text('3000');
 					}
-
 					if ( $('#agreement').prop('checked') ) {
 								$('#sum-text').text('6000');
 					}
-
 					if ( $('#law-meaning').prop('checked') ) {
 								$('#sum-text').text('3000');
 					}
-
 					if ( $('#bankruptcy').prop('checked')) {
 								if ( $('#person').prop('checked') ) {
 											$('#sum-text').text('300');
@@ -151,7 +126,6 @@ $(function () {
 											$('#sum-text').text('6000');
 								}
 					}
-
 					if ( $('#secure-claim').prop('checked') ) {
 								$('#sum-text').text('3000');
 					}
@@ -181,7 +155,7 @@ $(function () {
 	});
 
 
-	// При смена с иска на судебный приказ введенная сумма должна сохраняться
+	// При смене с иска на судебный приказ введенная сумма должна сохраняться
 	$('#claim-asset').change(function() {
 			if ( $('#claim-asset-sum-order').val() !== '' ) {
 					$('#claim-asset-sum').val( $('#claim-asset-sum-order').val() );
@@ -194,7 +168,7 @@ $(function () {
 			}
 	})
 
-	// При смена с судебного приказа на иск введенная сумма должна сохраняться
+	// При смене с судебного приказа на иск введенная сумма должна сохраняться
 	$('#claim-asset-order').change(function() {
 		if ( $('#claim-asset-sum').val() !== '' ) {
 				$('#claim-asset-sum-order').val( $('#claim-asset-sum').val() );
