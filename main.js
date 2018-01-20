@@ -4,13 +4,15 @@ $(function () {
 		$('input:radio').each(function(indx, el) {
 				if ( $(el).prop('checked') && $(el).attr('id') === 'claim-asset') {
 							$('#span-sum-entry').show();
-							$('#claim-asset-sum-order').focus();
-				}				
+						  $('#claim-asset-sum').focus();
+				}
+
 				if ( $(el).prop('checked') && $(el).attr('id') !== 'claim-asset') {
 							$('#span-sum-entry').hide();
-				}		
+				}
+
 				if ( $(el).prop('checked') && $(el).attr('id') === 'claim-asset-order') {
-							$('#span-sum-entry-order').show();
+							$('#span-sum-entry-order').show();					
 							$('#claim-asset-sum-order').focus();
 				}
 				
@@ -67,18 +69,32 @@ $(function () {
 	});
 
 
-	// Выбор радиокнопки Общая юрисдикция или Арбитражный суд 
-	// $('#general').change(function() {
-	// 		if ( $('#claim-asset').prop('checked') ) {
-	// 					$('#sum-text').text( calcIskGeneral() );
-	// 		}			
-	// });
+	// При смена с иска на судебный приказ введенная сумма должна сохраняться
+	$('#claim-asset').change(function() {
+			if ( $('#claim-asset-sum-order').val() !== '' ) {
+					$('#claim-asset-sum').val( $('#claim-asset-sum-order').val() );
+					if ( $('general').prop('checked') ) {
+						calcIskGeneral();
+					}
+					if ( $('arbitr').prop('checked') ) {
+						calcIskArbitr();
+					}
+			}
+	})
 
-	// $('#arbitr').change(function() {
-	// 		if ( $('#claim-asset').prop('checked') ) {
-	// 					$('#sum-text').text( calcIskArbitr() );	
-	// 		}
-	// });
+	$('#claim-asset-order').change(function() {
+		if ( $('#claim-asset-sum').val() !== '' ) {
+				$('#claim-asset-sum-order').val( $('#claim-asset-sum').val() );
+				if ( $('general').prop('checked') ) {
+					calcIskGeneralOrder();
+				}
+				if ( $('arbitr').prop('checked') ) {
+					calcIskArbitrOrder();
+				}
+		}		
+	})
+
+
 
 
 
