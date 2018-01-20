@@ -41,11 +41,13 @@
 	display: inline;
 }
 
-#span-sum-entry i {
+#span-sum-entry i,
+#span-sum-entry-order i {
 	color: #0013E5;
 }
 
-#claim-asset-sum {
+#claim-asset-sum,
+#claim-asset-sum-order {
 	width: 100px;
 }
 

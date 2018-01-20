@@ -18,7 +18,8 @@
 
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-
+		
+		<script src="script.js"></script>
     <script src="main.js"></script>
 
   </head>
@@ -31,7 +32,7 @@
 			<div class="claimant-wrap">
 				<h5><b>Истец:</b></h5>
 				<label>
-					<input id="person" type="radio" name="claimant" checked>
+					<input id="person" type="radio" name="claimant">
 					<span>&nbsp;&nbsp;Физическое лицо</span>
 				</label>
 				<label>
@@ -43,7 +44,7 @@
 			<div class="court-wrap">
 				<h5><b>Обращение в:</b></h5>
 				<label>
-					<input id="general" type="radio" name="court" checked>
+					<input id="general" type="radio" name="court">
 					<span>&nbsp;&nbsp;Суд общей юрисдикции</span>
 				</label>
 				<label>
@@ -64,7 +65,16 @@
 					<span>&nbsp;&nbsp;Исковое обращение имущественного характера</span>.						
 					<span id="span-sum-entry" style="display: none;">
 						<span id="label-sum-entry"><i>Введите сумму иска:</i></span>
-						<input id="claim-asset-sum" type="text" name="request">&nbsp;руб.
+						<input id="claim-asset-sum" type="text" name="request" autofocus>&nbsp;руб.
+					</span>					
+				</label>
+
+				<label>
+					<input id="claim-asset-order" type="radio" name="request">
+					<span>&nbsp;&nbsp;Заявление о выдаче судебного приказа</span>.						
+					<span id="span-sum-entry-order" style="display: none;">
+						<span id="label-sum-entry-order"><i>Введите сумму требования:</i></span>
+						<input id="claim-asset-sum-order" type="text" name="request">&nbsp;руб.
 					</span>					
 				</label>
 				
@@ -129,7 +139,7 @@
 				</label>
 			</div>
 
-
+			
 
 		</div>
 

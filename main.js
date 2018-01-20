@@ -1,75 +1,87 @@
 $(function () {    
 
-
 	$(document).on('change', function() {
 		$('input:radio').each(function(indx, el) {
 				if ( $(el).prop('checked') && $(el).attr('id') === 'claim-asset') {
 							$('#span-sum-entry').show();
-				}
-				
+							$('#claim-asset-sum-order').focus();
+				}				
 				if ( $(el).prop('checked') && $(el).attr('id') !== 'claim-asset') {
 							$('#span-sum-entry').hide();
-				}			  			
+				}		
+				if ( $(el).prop('checked') && $(el).attr('id') === 'claim-asset-order') {
+							$('#span-sum-entry-order').show();
+							$('#claim-asset-sum-order').focus();
+				}
+				
+				if ( $(el).prop('checked') && $(el).attr('id') !== 'claim-asset-order') {
+							$('#span-sum-entry-order').hide();
+				}		  			
 		})
-	})
 
+		if ( $('#general').prop('checked') ) {
+					if ( $('#salary, #crime, #documents, #divorce-appeal, #adoption, #invalid, #consumer').prop('checked') ) {
+								$('#sum-text').text( '0' );
+					}
+					if ( $('#claim-asset').prop('checked') ) {						
+									 $('#sum-text').text( calcIskGeneral() );							
+					}	
+					if ( $('#claim-asset-order').prop('checked') ) {		
+									 $('#sum-text').text( calcIskGeneralOrder() );	
+					}				
+		}
 
-	$('#claim-asset-sum').keyup(function() {
-			var paymentSum = 0;
-			var enteredSum = $(this).val();
-			var exceed = null;
-
-			// до 20 000 руб - 4 процента цены иска, но не менее 400 руб;
-			if (enteredSum <= 20000) {
-				  paymentSum = enteredSum * 4 / 100;
-				  
-				  if (paymentSum < 400) {
-				  		paymentSum = 400;
-				  }
+		if ( $('#arbitr').prop('checked') ) {
+					if ( $('#salary').prop('checked') ) {
+								$('#sum-text').text( '0' );
+					}
+					if ( $('#claim-asset').prop('checked') ) {						
+								 $('#sum-text').text( calcIskArbitr() );							
+					}
+					if ( $('#claim-asset-order').prop('checked') ) {		
+									 $('#sum-text').text( calcIskArbitrOrder() );	
+					}		
+		}		
 					
-					$('#sum-text').text( paymentSum );
-			}
-
-			//от 20 001 рубля до 100 000 руб - 800 руб плюс 3 процента суммы, превышающей 20 000 руб;
-			if (enteredSum > 20000 && enteredSum <= 100000 ) {
-					paymentSum = 800;
-					exceed = enteredSum - 20000;					
-				  paymentSum = paymentSum + (exceed * 3 / 100);		 
-					$('#sum-text').text( paymentSum );
-			}
-
-			//от 100 001 рубля до 200 000 руб - 3 200 рублей плюс 2 процента суммы, превышающей 100 000 руб;
-			if (enteredSum > 100000 && enteredSum <= 200000 ) {
-					paymentSum = 3200;
-					exceed = enteredSum - 100000;					
-				  paymentSum = paymentSum + (exceed * 2 / 100);		 
-					$('#sum-text').text( paymentSum );
-			}
-
-			//от 200 001 руб до 1 000 000 руб - 5 200 руб плюс 1 процент суммы, превышающей 200 000 руб;
-			if (enteredSum > 200000 && enteredSum <= 1000000 ) {
-					paymentSum = 5200;
-					exceed = enteredSum - 200000;					
-				  paymentSum = paymentSum + (exceed * 1 / 100);		 
-					$('#sum-text').text( paymentSum );
-			}
-
-			//свыше 1 000 000 р - 13 200 р плюс 0,5 процента суммы, превышающей 1 000 000 р, но не более 60 000 р;
-			if (enteredSum > 1000000 ) {
-					paymentSum = 13200;
-					exceed = enteredSum - 1000000;					
-				  paymentSum = paymentSum + (exceed * 0.5 / 100);		 
-				  
-				  if (paymentSum > 60000) {
-				  		paymentSum = 60000;
-				  }
-					
-					$('#sum-text').text( paymentSum );
-			}
-
-
-
 	});
+
+  // Введение суммы пользователем
+	$('#claim-asset-sum').keyup(function() {
+			if ( $('#general').prop('checked') ) {
+						$('#sum-text').text( calcIskGeneral() );
+			}		
+
+			if ( $('#arbitr').prop('checked') ) {
+						$('#sum-text').text( calcIskArbitr() );
+			}		
+	});
+
+	$('#claim-asset-sum-order').keyup(function() {
+			if ( $('#general').prop('checked') ) {
+						$('#sum-text').text( calcIskGeneralOrder() );
+			}		
+
+			if ( $('#arbitr').prop('checked') ) {
+						$('#sum-text').text( calcIskArbitrOrder() );
+			}		
+	});
+
+
+	// Выбор радиокнопки Общая юрисдикция или Арбитражный суд 
+	// $('#general').change(function() {
+	// 		if ( $('#claim-asset').prop('checked') ) {
+	// 					$('#sum-text').text( calcIskGeneral() );
+	// 		}			
+	// });
+
+	// $('#arbitr').change(function() {
+	// 		if ( $('#claim-asset').prop('checked') ) {
+	// 					$('#sum-text').text( calcIskArbitr() );	
+	// 		}
+	// });
+
+
+
 
 
 
