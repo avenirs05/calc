@@ -112,14 +112,9 @@
 				
 				<label>
 					<input id="dispute-not-asset" type="radio" name="request">
-					<span>&nbsp;&nbsp;Спор неимущественного характера</span>
+					<span>&nbsp;&nbsp;Подача искового заявления неимущественного характера</span>
 				</label>	
-
-				<label>
-					<input id="claim-not-value-not-asset" type="radio" name="request">
-					<span>&nbsp;&nbsp;Подача искового заявления имущественного характера, не подлежащего оценке, а также искового заявления неимущественного характера</span>
-				</label>
-				
+			
 				<label>
 					<input id="claim-divorce" type="radio" name="request">
 					<span>&nbsp;&nbsp;Подача искового заявления о расторжении брака</span>
