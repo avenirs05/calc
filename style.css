@@ -3,18 +3,28 @@
 	padding-right: 60px;
 	position: relative;
 	margin-top: 30px;
-	/*border: 1px solid red;*/
 }
+
+
 
 #wrapper label {
 	display: block;
 }
 
 .claimant-wrap, 
-.court-wrap,
+.court-wrap {
+	/*margin-top: 30px;*/
+	display: inline-block;	
+}
+
 .payment-sum-wrap {
-	margin-top: 30px;
-	display: inline-block;
+	position: fixed;
+	right: 30px;
+	top: 40px;
+	background-color: #FFFF99;
+	padding: 10px;
+	border-radius: 3px;
+	border: 1px dotted black;
 }
 
 .claimant-wrap {
@@ -53,16 +63,32 @@
 
 
 @media screen and (max-device-width: 991px) {
-
+	#wrapper {
+		padding-left: 10px;
+		padding-right: 10px;
+		position: relative;
+		margin-top: 30px;
+	}
 
 }
 
 @media screen and (min-device-width: 320px) {
+	 h2 {
+	 	font-size: 24px;
+	 	width: 50%;
+	 	margin-bottom: 20px;
+	 }
+	 .payment-sum-wrap {
+	 	right: 10px;
+	 }
+	 .payment-sum-wrap {
+		 	top: 37px;
+	 }
 
 }
 
 @media screen and (min-device-width: 360px) {
-
+	
 }
 
 @media screen and (min-device-width: 768px) {
@@ -71,6 +97,18 @@
 
 
 @media screen and (min-device-width: 992px) {	
+	h2 {
+		font-size: 32px;
+		margin-bottom: 30px;
+		width: 80%;
+	}
+	.request-type-wrap {
+		width: 80%;
+	}
+	 .payment-sum-wrap {
+		 	top: 40px;
+		 	right: 30px;
+	 }
 
 
 }

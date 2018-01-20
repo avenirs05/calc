@@ -27,7 +27,10 @@
   <body> 
 	
 		<div id="wrapper">
-			<h2 class="text-center">Калькулятор государственной пошлины</h2>
+			<div class="payment-sum-wrap">
+				<h5><b>Госпошлина:</b><br> <span id="sum-text">0</span> руб.</h5>
+			</div>
+			<h2>Калькулятор государственной пошлины</h2>
 			
 			<div class="claimant-wrap">
 				<h5><b>Истец:</b></h5>
@@ -53,9 +56,7 @@
 				</label>
 			</div>
 
-			<div class="payment-sum-wrap">
-				<h5><b>Сумма госпошлины:</b> <span id="sum-text">0</span> руб.</h5>
-			</div>
+
 
 			<div class="request-type-wrap">
 				<h5><b>Тип заявления:</b></h5>
@@ -64,7 +65,7 @@
 					<input id="claim-asset" type="radio" name="request">
 					<span>&nbsp;&nbsp;Исковое обращение имущественного характера</span>.						
 					<span id="span-sum-entry" style="display: none;">
-						<span id="label-sum-entry"><i>Введите сумму иска:</i></span>
+						<span id="label-sum-entry"><i>Введите сумму иска:&nbsp;</i></span>
 						<input id="claim-asset-sum" type="text" name="request" autofocus>&nbsp;руб.
 					</span>					
 				</label>
@@ -73,7 +74,7 @@
 					<input id="claim-asset-order" type="radio" name="request">
 					<span>&nbsp;&nbsp;Заявление о выдаче судебного приказа</span>.						
 					<span id="span-sum-entry-order" style="display: none;">
-						<span id="label-sum-entry-order"><i>Введите сумму требования:</i></span>
+						<span id="label-sum-entry-order"><i>Введите сумму требования:&nbsp;</i></span>
 						<input id="claim-asset-sum-order" type="text" name="request">&nbsp;руб.
 					</span>					
 				</label>
