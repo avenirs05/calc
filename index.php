@@ -27,6 +27,7 @@
 			<div class="payment-sum-wrap">
 				<h5><b>Госпошлина:</b><br> <span id="sum-text">0</span> руб.</h5>
 			</div>
+			<img src="<?php echo get_template_directory_uri(); ?>/calculator.png" height="100" alt="">
 			<h2>Калькулятор государственной пошлины</h2>
 			
 			<div class="claimant-wrap">

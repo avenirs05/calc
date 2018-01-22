@@ -1,8 +1,8 @@
 #wrapper {
-	padding-left: 60px;
-	padding-right: 60px;
+/*	padding-left: 60px;
+	padding-right: 60px;*/
 	position: relative;
-	margin-top: 30px;
+	/*margin-top: 30px;*/
 }
 
 #wrapper label {
@@ -12,16 +12,27 @@
 .claimant-wrap, 
 .court-wrap {
 	display: inline-block;	
+	border-bottom: 1px dotted #c1c5cc;
+	padding-bottom: 10px;
+	padding-right: 10px;
 }
 
 .payment-sum-wrap {
-	position: fixed;
+/*	position: fixed;
 	right: 30px;
-	top: 40px;
-	background-color: #FFFF99;
-	padding: 10px;
-	border-radius: 3px;
-	border: 1px dotted black;
+	top: 40px;*/
+	/*background-color: #D2EBF8;*/
+	color: #000;
+	margin-bottom: 30px;
+	width: 70%;
+	padding: 0;
+	margin-top: 8px;
+/*	border-radius: 3px;
+	border: 1px dotted black;*/
+}
+
+.payment-sum-wrap h5 {
+	padding: 0;
 }
 
 .claimant-wrap {
@@ -42,7 +53,9 @@
 
 .request-type-wrap {
 	margin-top: 30px;
-	margin-bottom: 30px;
+	border-bottom: 1px dotted #c1c5cc;
+	padding-bottom: 20px;
+	/*margin-bottom: 30px;*/
 }
 
 #wrapper #label-sum-entry {
@@ -59,35 +72,63 @@
 	width: 100px;
 }
 
+#wrapper label span {
+	font-size: 14px;
+}
+
+#wrapper h2 {
+	margin-bottom: 20px;
+	border-bottom: 1px dotted #c1c5cc;
+}
+
+#wrapper img {
+	width: 20px;
+	margin-right: 10px;
+	float: left;
+}
+
+#final-sum-wrap {
+	font-size: 22px;
+	border-bottom: 1px dotted rgb(193, 197, 204);
+	padding-bottom: 10px;
+}
+
+#final-sum-wrap b {
+	font-size: 22px;
+}
+
 
 @media screen and (max-device-width: 991px) {
 	#wrapper {
-		padding-left: 10px;
-		padding-right: 10px;
+/*		padding-left: 10px;
+		padding-right: 10px;*/
 		position: relative;
-		margin-top: 30px;
+/*		margin-top: 30px;*/
 	}
 }
 
 @media screen and (min-device-width: 320px) {
 	 h2 {
 	 	font-size: 24px;
-	 	width: 50%;
+	 	/*width: 50%;*/
 	 	margin-bottom: 20px;
 	 }
-	 .payment-sum-wrap {
+/*	 .payment-sum-wrap {
 	 	right: 10px;
 	 }
 	 .payment-sum-wrap {
 		 	top: 37px;
-	 }
+	 }*/
 	 h5 b {
-	 	font-size: 18px;
+	 	font-size: 14px;
 	 }
 	 .payment-sum-wrap {
 	 	padding: 0;
 	 	top: 0px;
 	 	right: 0px;
+	 }
+	 .claimant-wrap {
+	 	margin-bottom: 30px;
 	 }
 
 }
@@ -100,16 +141,19 @@
 	h2 {
 		font-size: 32px;
 		margin-bottom: 30px;
-		width: 80%;
+		width: 70%;
 	}
 	.request-type-wrap {
-		width: 80%;
+		width: 70%;
 	}
-	 .payment-sum-wrap {
+	.claimant-wrap {
+		margin-bottom: 0;
+	}
+/*	 .payment-sum-wrap {
 		 	top: 40px;
 		 	right: 30px;
 		 	padding: 10px;
-	 }
+	 }*/
 }
 
 @media screen and (min-device-width: 1200px) {}

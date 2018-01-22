@@ -39,9 +39,17 @@ $(function () {
 					if ( $('#claim-asset-order').prop('checked') ) {		
 									 $('#sum-text').text( calcIskGeneralOrder() );	
 					}
-					if ( $('#salary, #crime, #documents, #divorce-appeal, #adoption, #invalid, #consumer').prop('checked') ) {
-								$('#sum-text').text( '0' );
-					}
+					// if ( $('#salary, #crime, #documents, #divorce-appeal, #adoption, #invalid, #consumer').prop('checked') ) {
+					// 			$('#sum-text').text( '0' );
+					// }
+					if ( $('#salary').prop('checked') ) {	$('#sum-text').text( '0' );	}
+					if ( $('#crime').prop('checked') ) {	$('#sum-text').text( '0' );	}
+					if ( $('#documents').prop('checked') ) {	$('#sum-text').text( '0' );	}
+					if ( $('#divorce-appeal').prop('checked') ) {	$('#sum-text').text( '0' );	}
+					if ( $('#adoption').prop('checked') ) {	$('#sum-text').text( '0' );	}
+					if ( $('#invalid').prop('checked') ) {	$('#sum-text').text( '0' );	}
+					if ( $('#consumer').prop('checked') ) {	$('#sum-text').text( '0' );	}
+
 					if ( $('#dispute-not-asset').prop('checked')) {
 								if ( $('#person').prop('checked') ) {
 											$('#sum-text').text('300');
@@ -59,7 +67,7 @@ $(function () {
 								}
 					}
 					if ( $('#claim-divorce').prop('checked') ) {
-								$('#sum-text').text('150');
+								$('#sum-text').text('600');
 					}
 					if ( $('#alimony').prop('checked') ) {
 								$('#sum-text').text('150');
